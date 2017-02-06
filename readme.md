@@ -4,7 +4,7 @@ Tested On:
 * Nano/ServerCore RTM
 
 # Scope
-This build was initially grabbed from https://github.com/DarwinJS/ChocoPackages/tree/master/openssh because of its handling of OpenSSH
+This build was initially grabbed from https://github.com/DarwinJS/ChocoPackages/tree/master/openssh 
 
 # Territory
 This build is under development to host X-Windows sessions from the container using mostly Chocolatey modules
