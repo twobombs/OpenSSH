@@ -8,10 +8,10 @@ FROM microsoft/windowsservercore:latest
 RUN powershell Install-PackageProvider NuGet -forcebootstrap -force
 RUN powershell Register-PackageSource -name chocolatey -provider nuget -location http://chocolatey.org/api/v2/ -trusted
 RUN powershell Install-Package openssh -provider NuGet
-RUN powershell cd "$((dir "$env:ProgramFiles\nuget\packages\openssh*\tools" |select -last 1).fullname)" ; . ".\barebonesinstaller.ps1" -SSHServerFeature
-RUN powershell choco -y install -y systernals 
-RUN powershell choco -y install -y VcXsrv
-RUN powershell choco -y install -y mc
+# RUN powershell cd "$((dir "$env:ProgramFiles\nuget\packages\openssh*\tools" |select -last 1).fullname)" ; . ".\barebonesinstaller.ps1" -SSHServerFeature
+RUN powershell Install-Package sysinternals -provider NuGet
+RUN powershell Install-Package VcXsrv -provider NuGet
+RUN powershell Install-Package mc -provider NuGet
 
 EXPOSE 22/tcp
 
